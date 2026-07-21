@@ -6,7 +6,7 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "Firefly Blog",
+	title: "三木 Blog",
 
 	// 站点副标题
 	subtitle: "记录技术与生活",
@@ -98,9 +98,9 @@ export const siteConfig: SiteConfig = {
 	// 页面开关配置 - 控制特定页面的访问权限，设为false会返回404并自动隐藏对应的导航栏菜单项
 	pages: {
 		// 友链页面开关
-		friends: false,
+		friends: true,
 		// 打赏页面开关：保留功能代码，等配置个人收款方式后再开启
-		sponsor: false,
+		sponsor: true,
 		// 留言板页面开关，需要配置评论系统
 		guestbook: false,
 		// 番组计划页面开关，含追番、游戏、书籍和音乐
