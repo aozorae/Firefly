@@ -6,7 +6,10 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	"playerEnable": false,
 	"src": {
 		"desktop": [
-			"https://i.chsm666.top/file/1784686171666_145084707_p0_master1200.jpg"
+			"https://i.chsm666.top/file/r2/1784707834490_118775696_p0-：D.jpg",
+			"https://i.chsm666.top/file/r2/1784707835399_128181590_p0-无题.jpg",
+			"https://i.chsm666.top/file/r2/1784707826318_116456273_p0-Sparkle.jpg",
+			"https://i.chsm666.top/file/r2/1784707657356_133464975_p0-昔涟？大昔涟？爱＊＊＊.png"
 		],
 		"mobile": [
 			"assets/images/MobileWallpaper/m1.avif",
