@@ -31,9 +31,8 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			"title": "记录生活，分享思考",
 			"titleSize": "3.8rem",
 			"subtitle": [
-				"技术实践",
-				"学习笔记",
-				"生活随想"
+				"若羽翼未丰，便在梦里飞向天空",
+				"岁月的涟漪，定格成温柔的永恒"
 			],
 			"subtitleSize": "1.5rem",
 			"typewriter": {
