@@ -55,6 +55,13 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 				lrc: "",
 			},
 			{
+				name: "昔涟",
+				artist: "张韶涵 & HOYO-MiX",
+				url: "/assets/music/tracks/ripples-of-past-reverie.mp3",
+				cover: "/assets/music/cover/ripples-of-past-reverie.jpg",
+				lrc: "",
+			},
+			{
 				name: "在银河中孤独摇摆",
 				artist: "知更鸟 & HOYO-MiX & Chevy",
 				url: "/assets/music/tracks/sway-to-my-beat-in-cosmos.mp3",
