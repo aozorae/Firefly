@@ -63,6 +63,81 @@ export const fontsList: FontDefinition[] = [
 			"monospace",
 		],
 	},
+	// ─── 站点本地可变字体 ───
+	// 使用中性别名隔离页面配置与上游品牌名称；字体二进制的原始版权与名称元数据保持不变。
+	{
+		name: "Lumen Sans",
+		cssVariable: "--font-lumen-sans",
+		provider: "local",
+		weights: ["300 800"],
+		styles: ["normal", "italic"],
+		display: "swap",
+		options: {
+			variants: [
+				{
+					src: ["./src/assets/fonts/LumenSans-Roman.woff2"],
+					weight: "300 800",
+					style: "normal",
+				},
+				{
+					src: ["./src/assets/fonts/LumenSans-Italic.woff2"],
+					weight: "300 800",
+					style: "italic",
+				},
+			],
+		},
+		fallbacks: ["sans-serif"],
+	},
+	{
+		name: "Lumen Serif",
+		cssVariable: "--font-lumen-serif",
+		provider: "local",
+		weights: ["300 800"],
+		styles: ["normal", "italic"],
+		display: "swap",
+		options: {
+			variants: [
+				{
+					src: ["./src/assets/fonts/LumenSerif-Roman.woff2"],
+					weight: "300 800",
+					style: "normal",
+				},
+				{
+					src: ["./src/assets/fonts/LumenSerif-Italic.woff2"],
+					weight: "300 800",
+					style: "italic",
+				},
+			],
+		},
+		fallbacks: ["serif"],
+	},
+	{
+		name: "Lumen Mono",
+		cssVariable: "--font-lumen-mono",
+		provider: "local",
+		weights: ["300 800"],
+		styles: ["normal"],
+		display: "swap",
+		options: {
+			variants: [
+				{
+					src: ["./src/assets/fonts/LumenMono.woff2"],
+					weight: "300 800",
+					style: "normal",
+				},
+			],
+		},
+		fallbacks: [
+			"ui-monospace",
+			"SFMono-Regular",
+			"Menlo",
+			"Monaco",
+			"Consolas",
+			"Liberation Mono",
+			"Courier New",
+			"monospace",
+		],
+	},
 	// ─── 本地字体示例 ───
 	// 使用步骤：
 	// 1. 将 TTF/OTF/WOFF2 字体文件放在 public/assets/fonts/ 目录下
@@ -89,18 +164,18 @@ export const fontConfig: FontSelectionConfig = {
 	enable: true,
 	// 当前选择的字体 CSS 变量名（对应上方 fonts 中的 cssVariable）
 	// 使用 "system" 表示系统字体（不加载任何自定义字体）
-	selected: ["system"],
+	selected: ["--font-lumen-sans"],
 
 	// 各区域独立字体设置（填写上方 fonts 中的 cssVariable，留空则使用全局 selected 字体）
 	// 例如：bannerTitleFont: "--font-inter", 表示主页横幅主标题使用 Inter 字体
 	// 主页横幅主标题字体
-	bannerTitleFont: "--font-zen-maru-gothic",
+	bannerTitleFont: "--font-lumen-serif",
 	// 主页横幅副标题字体
-	bannerSubtitleFont: "--font-inter",
+	bannerSubtitleFont: "--font-lumen-sans",
 	// 导航栏标题字体
-	navbarTitleFont: "",
+	navbarTitleFont: "--font-lumen-sans",
 	// 代码块字体（用于代码高亮和等宽字体场景）
-	codeFont: "--font-jetbrains-mono",
+	codeFont: "--font-lumen-mono",
 
 	// 本地字体子集化配置（构建时由 scripts/subset-fonts.ts 处理）
 	// key 为 fonts 数组中对应的 cssVariable，value 为子集化选项

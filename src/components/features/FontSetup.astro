@@ -31,6 +31,8 @@ const selectedIds: string[] =
 // 这里只拼接 CSS 变量引用，末尾加系统字体作为最终保底
 const SYSTEM_FONT_STACK =
 	"system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif";
+const MONO_FONT_STACK =
+	"ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace";
 const selectedFontVars = selectedIds.filter((v) => v !== "system");
 const bodyFontFamily =
 	selectedFontVars.length > 0
@@ -49,6 +51,7 @@ const bannerSubtitleFontVar = fontConfig.enable
 const navbarTitleFontVar = fontConfig.enable
 	? fontConfig.navbarTitleFont || ""
 	: "";
+const codeFontVar = fontConfig.enable ? fontConfig.codeFont || "" : "";
 ---
 
 <!-- Astro Font API: 自动下载、缓存并生成优化的 @font-face -->
@@ -60,13 +63,14 @@ const navbarTitleFontVar = fontConfig.enable
 ))}
 
 <!-- 区域字体 CSS 变量 + body 字体 -->
-{fontConfig.enable && (bannerTitleFontVar || bannerSubtitleFontVar || navbarTitleFontVar || selectedFontVars.length > 0) && (
+{fontConfig.enable && (bannerTitleFontVar || bannerSubtitleFontVar || navbarTitleFontVar || codeFontVar || selectedFontVars.length > 0) && (
   <style
     set:html={`
-    ${bannerTitleFontVar || bannerSubtitleFontVar || navbarTitleFontVar ? `:root {
+    ${bannerTitleFontVar || bannerSubtitleFontVar || navbarTitleFontVar || codeFontVar ? `:root {
       ${bannerTitleFontVar ? `--font-banner-title: var(${bannerTitleFontVar}, inherit);` : ""}
       ${bannerSubtitleFontVar ? `--font-banner-subtitle: var(${bannerSubtitleFontVar}, inherit);` : ""}
       ${navbarTitleFontVar ? `--font-navbar-title: var(${navbarTitleFontVar}, inherit);` : ""}
+      ${codeFontVar ? `--font-code: var(${codeFontVar}, ${MONO_FONT_STACK});` : ""}
     }` : ""}
 
     body {
