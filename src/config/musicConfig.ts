@@ -8,8 +8,8 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	// 是否在侧边栏显示音乐播放器组件
 	showInSidebar: true,
 
-	// 使用方式："meting" 使用 Meting API，"local" 使用本地音乐列表
-	mode: "meting",
+	// 使用仓库内的音频，避免第三方歌单接口波动导致播放器无法使用
+	mode: "local",
 
 	// 默认音量 (0-1)
 	volume: 0.7,
@@ -17,8 +17,8 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	// 播放模式：'list'=列表循环, 'one'=单曲循环, 'random'=随机播放
 	playMode: "list",
 
-	// 是否显启用歌词
-	showLyrics: true,
+	// 当前导入的歌曲没有独立歌词文件，关闭歌词区避免显示空内容
+	showLyrics: false,
 
 	// Meting API 配置
 	meting: {
@@ -48,10 +48,38 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	local: {
 		playlist: [
 			{
-				name: "使一颗心免于哀伤",
-				artist: "知更鸟 / HOYO-MiX / Chevy",
-				url: "/assets/music/使一颗心免于哀伤-哼唱.mp3",
-				cover: "/assets/music/cover/109951169585655912.webp",
+				name: "再度和你 With You Once More",
+				artist: "HOYO-MiX",
+				url: "/assets/music/tracks/with-you-once-more.mp3",
+				cover: "/assets/music/cover/with-you-once-more.jpg",
+				lrc: "",
+			},
+			{
+				name: "在银河中孤独摇摆",
+				artist: "知更鸟 & HOYO-MiX & Chevy",
+				url: "/assets/music/tracks/sway-to-my-beat-in-cosmos.mp3",
+				cover: "/assets/music/cover/sway-to-my-beat-in-cosmos.jpg",
+				lrc: "",
+			},
+			{
+				name: "希望有羽毛和翅膀",
+				artist: "知更鸟 & HOYO-MiX & Chevy",
+				url: "/assets/music/tracks/hope-is-the-thing-with-feathers.mp3",
+				cover: "/assets/music/cover/hope-is-the-thing-with-feathers.jpg",
+				lrc: "",
+			},
+			{
+				name: "星辰不坠落",
+				artist: "蓝心羽",
+				url: "/assets/music/tracks/stars-do-not-fall.mp3",
+				cover: "/assets/music/cover/stars-do-not-fall.jpg",
+				lrc: "",
+			},
+			{
+				name: "独角戏 Monodrama",
+				artist: "HOYO-MiX",
+				url: "/assets/music/tracks/monodrama.mp3",
+				cover: "/assets/music/cover/monodrama.jpg",
 				lrc: "",
 			},
 		],
