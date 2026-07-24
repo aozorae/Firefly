@@ -72,8 +72,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			"showOnPostPage": true,
 			"specificConfig": {
 				"siteInfo": {
-					// 固定展示博客实际采用的构建平台，避免被部署环境名称替代
-					"buildPlatform": "Arch Linux x86",
 					"unknownBuildPlatform": "Unknown CI"
 				}
 			}
@@ -146,8 +144,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			"showOnPostPage": true,
 			"specificConfig": {
 				"siteInfo": {
-					// 移动端沿用同一平台声明，避免不同入口显示不一致
-					"buildPlatform": "Arch Linux x86",
 					"unknownBuildPlatform": "Unknown CI"
 				}
 			}

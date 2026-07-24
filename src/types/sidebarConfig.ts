@@ -49,7 +49,6 @@ export type DynamicWidgetConfig = {
 
 // 站点信息组件专用配置
 export type SiteInfoConfig = {
-	buildPlatform?: string; // 固定展示的构建平台；未配置时才自动识别 CI，避免部署环境覆盖站点声明
 	unknownBuildPlatform?: string; // 未识别的构建平台显示文本，默认 "Unknown CI"
 };
 

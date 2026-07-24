@@ -2,13 +2,11 @@
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { Icon } from "astro-icon/components";
-import ci from "ci-info";
 import WidgetLayout from "@/components/common/WidgetLayout.astro";
 import { licenseConfig, siteConfig } from "@/config";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import type { WidgetComponentConfig } from "@/types/config";
-import { detectBuildPlatform } from "@/utils/build-platform";
 import { formatDateI18nWithTime } from "@/utils/date-utils";
 
 interface Props {
@@ -54,18 +52,8 @@ if (pnpmMatch) {
 // 构建时间
 const buildTime = formatDateI18nWithTime(new Date());
 
-// 构建平台优先采用站点配置；未配置时才识别 CI，避免线上部署环境覆盖博客声明
-const unknownBuildPlatform =
-	widgetConfig?.specificConfig?.siteInfo?.unknownBuildPlatform || "Unknown CI";
-const buildPlatform =
-	widgetConfig?.specificConfig?.siteInfo?.buildPlatform ||
-	detectBuildPlatform({
-		env: process.env,
-		isCI: ci.isCI,
-		ciName: ci.name,
-		isDev: import.meta.env.DEV,
-		unknownBuildPlatform,
-	});
+// 固定展示博客采用的构建平台，避免 Firefly Admin 重建配置或 CI 环境变化导致内容漂移
+const buildPlatform = "Arch Linux x86";
 
 // 系统信息（平台 + 架构）
 const platformMap: Record<string, string> = {
