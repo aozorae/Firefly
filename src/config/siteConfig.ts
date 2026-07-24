@@ -6,7 +6,7 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	"title": "三木 Blog",
-	"subtitle": "记录技术与生活",
+	"subtitle": "记录技术",
 	"site_url": "https://chsm666.top",
 	"description": "基于 Astro 与 Firefly 主题构建的个人博客，用于记录技术实践、学习笔记与生活随想。",
 	"keywords": [
